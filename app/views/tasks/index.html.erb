@@ -1,15 +1,21 @@
-<h1>My tasks</h1>
-<form>
-	<% @tasks.each do |task| %>
-	  <% if task.completed %>
-	    <input type="checkbox" checked ><%= link_to task.title, task_path(task) %><h6 id="bin_icon"><%= link_to "delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" } %></h6><br>
-	    <% else %>
-	    <input type="checkbox"><%= link_to task.title, task_path(task) %><h6 id="bin_icon"><%= link_to "delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" } %></h6><br>
-	  <% end %>
-	<% end %>
-
-<%= link_to 'Add a new task', tasks_new_path, method: :get %>
-</form>
+<div id="container"> 
+  <h1 class="card-header">My tasks</h1>
+    <form>
+	  <% @tasks.each do |task| %>
+	   	<% if task.completed %>
+	   	<div class="card" style="width: 250px; padding: 20px 50px">
+		  <input class="card-body" type="checkbox" checked ><%= link_to task.title, task_path(task) %><h6 id="bin_icon"><%= link_to "delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" } %></h6><br>
+		</div>
+		  <% else %>
+		<div class="card" style="width: 250px; padding: 20px 50px">
+		  <input class="card-body" type="checkbox"><%= link_to task.title, task_path(task) %><h6 id="bin_icon"><%= link_to "delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" } %></h6><br>
+		</div>
+		<% end %>
+      <% end %>
+	</form>
+	<%= link_to 'Add a new task', tasks_new_path, class: "btn btn-primary" %>
+  
+</div>
 
 
 
