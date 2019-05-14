@@ -1,9 +1,13 @@
 <%= form_for(@task) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-
-  <%= f.label :details %>
-  <%= f.text_field :details %>
+	<div>
+	  <%= f.label :title %>
+	  <%= f.text_field :title %>
+	</div>
+	<div>
+	  <%= f.label :details %>
+	  <%= f.text_field :details %>
+	</div>
 
   <%= f.submit %>
 <% end %>
+
